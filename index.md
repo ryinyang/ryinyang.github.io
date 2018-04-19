@@ -1,7 +1,7 @@
 # About Me
-I'm a recent University of California, San Diego grad with a BS in 
-Computer Engineering. I'm looking to develop my skills as a software
-engineer! 
+My name is Ryan Yang and I'm a recent University of California, San Diego grad 
+with a BS in Computer Engineering. I'm looking to develop my skills as a 
+software engineer! 
 
 ## [2048](https://github.com/ryinyang/2048)  
 Created out of boredom during vacation, this is my own implementation of 2048,
