@@ -13,3 +13,5 @@ It has the ability to roll different kinds of dice, including a 4, 6, 10, 12,
 20, 100 sided dice.
 
 ## [Airline Data Science Project](ExploratoryAnalysis.html)
+This project takes data from the Bureau of Transportation and does some basic
+Data Science analysis and draws some basic statistical conclusions.
