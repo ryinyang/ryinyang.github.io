@@ -15,3 +15,7 @@ It has the ability to roll different kinds of dice, including a 4, 6, 10, 12,
 ## [Airline Data Science Project](ExploratoryAnalysis.html)
 This project takes data from the Bureau of Transportation and does some basic
 Data Science analysis and draws some basic statistical conclusions.
+
+## [Coding Challenges](codingchallenges.md)
+This page keeps track of the coding challenges I've done and documents what I
+learned at each challenge.
