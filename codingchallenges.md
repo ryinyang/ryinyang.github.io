@@ -1,3 +1,7 @@
+# Coding Challenges
+Here are a bunch of different coding problems that I've tried out, it includes
+my thought processes and different attempts at solving them! 
+
 ## [1. Pow(x, n)](https://leetcode.com/problems/powx-n/description/)
 
 ### Description
@@ -24,7 +28,7 @@ While this solution does work, it does not run very efficiently. Observe that
 this solution has to multiply by x at every loop for n loops. Thus we get a
 time complexity of O(n)
 
-### Best Solution
+### Better Solution
 ```
 class Solution:
     def myPow(self, x, n):
@@ -44,11 +48,18 @@ class Solution:
             n = int(n/2)
         return ret
 ```
+This solution is more efficient! We can see that at each iteration, n is halved,
+meaning that it runs at O(log(n)).
 
 ### Takeaway
-I learned that mathematically, 2 ^ 10 is equivalent to 5 * 2 ^ 2. We can
-leverage this knowledge to turn a naive O(n) solution into an O(log(n))
-solution.
+I initially didn't think that O(n) would be slow for this problem. In my
+experience (especially in school), we learn that slow algorithms are ones that
+have O(n^2) or O(n!). In general, we learn that algorithms that run in linear
+time are actually quite fast, especially when we are doing anything graph
+related. However it turned out this linear solution was, in fact, too slow, 
+especially when we are trying to find the 1000000th power of something. 
+I learned that just because something is linear, doesn't mean that it's 
+necessarily the fastest solution.
 
 ## [2. N Queens II (Status: Unfinished)](https://leetcode.com/problems/n-queens-ii/description/)
 
