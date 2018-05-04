@@ -180,11 +180,11 @@ Finally, I summed up all the solutions that had been found and output that
 number.
 
 I had 5 states for each cell on the board:
--2 means that the cell is open but has been checked before
--1 means that the cell is blocked (or being attacked) by an existing queen
-0 means that the cell is empty and unblocked
-1 means that the cell is occupied by a queen
-2 means that the cell is newly occupied by a queen (makes it faster to block
+* -2 means that the cell is open but has been checked before
+* -1 means that the cell is blocked (or being attacked) by an existing queen
+* 0 means that the cell is empty and unblocked
+* 1 means that the cell is occupied by a queen
+* 2 means that the cell is newly occupied by a queen (makes it faster to block
 new cells)
 
 Currently, this solution exceeds the time limit allowed, meaning there is a
