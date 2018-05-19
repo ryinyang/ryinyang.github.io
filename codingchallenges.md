@@ -189,3 +189,56 @@ new cells)
 
 Currently, this solution exceeds the time limit allowed, meaning there is a
 faster solution. 
+
+## [3. Happy Number](https://leetcode.com/problems/happy-number/description/)
+
+### Description
+Given a number n, return true if it is a Happy Number. A Happy Number found like
+this: Take the digits of n and find the sum of squares. Continue until the sum
+becomes 1. If n becomes 1, then it is a Happy Number, if the sum loops endlessly
+in a cycle, it is not a Happy Number.
+
+Example:
+Input: 19
+Output: true
+Explanation: 
+1^2 + 9^2 = 82
+8^2 + 2^2 = 68
+6^2 + 8^2 = 100
+1^2 + 0^2 + 0^2 = 1
+
+### Solution
+
+```
+class Solution:
+    def isHappy(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        seen = set()
+        
+        while n != 1:
+            seen.add(n)
+            s = str(n)
+            n = 0
+            for digit in s:
+                n += int(digit) ** 2
+            
+            if n in seen:
+                return False
+        
+        return True
+```
+This solution is a simple implementation of the algorithm described in the 
+problem. It converts n into a string to get the digits easily, then finds the 
+sums. It keeps track of cycles by adding each seen number into a set data
+structure. If we've seen a number before, we return false, otherwise, we return 
+true.
+
+### Takeaways
+The only misstep I had was trying to split the newly converted sum with 
+str.split(). I originally thought that this function would split the string
+into an array of characters, but when given no parameters, split doesn't
+know how to split the string, so it returns the whole string in an array.
+To loop through the string, I simply needed to use a for loop.
