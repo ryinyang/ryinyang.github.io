@@ -242,3 +242,62 @@ str.split(). I originally thought that this function would split the string
 into an array of characters, but when given no parameters, split doesn't
 know how to split the string, so it returns the whole string in an array.
 To loop through the string, I simply needed to use a for loop.
+
+## [4. Binary Tree Pruning](https://leetcode.com/problems/binary-tree-pruning/description/)
+
+### Description
+Given a BST whose nodes only contain 1 or 0, return a tree where every subtree
+not containing 1 is removed.
+
+### Solution 
+```
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def pruneTree(self, root):
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
+    
+        def postOrder(curr):
+            if curr is not None:
+                left = postOrder(curr.left)
+                right = postOrder(curr.right)
+                
+                # Remove subtree
+                if left == 0:
+                    curr.left = None
+                if right == 0:
+                    curr.right = None
+                    
+                # Return status
+                if curr.val == 1:
+                    return 1
+                else:
+                    if left == 1 or right == 1 or curr.val == 1:
+                        return 1
+                    else:
+                        return 0
+            return -1
+        
+        postOrder(root)
+        return root
+```
+My solution does a post order traversal through the tree. When a subtree
+without any 1's is detected, remove the subtree. When a leaf node is reached,
+return -1, indicating that a leaf node has been reached. If a node is a 1,
+return 1. If a node is a 0, but has a subtree with 1, return 1, otherwise,
+return 0. When a node detects that one of the children has no 1's, remove.
+
+### Takeaways
+The biggest thing I learned from this problem is how to apply a post order
+traversal. I think the traversals are one of those algorithms that I learned
+in class but never really applied. Doing a post order traversal meant that
+by the time that I visit a node, I have information about both the subtrees,
+meaning that if they returned 0, I know I can remove them from the tree.
